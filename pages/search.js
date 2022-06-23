@@ -6,16 +6,17 @@ import { BsFilter } from "react-icons/bs";
 
 import SearchFilters from "../components/SearchFilters";
 import Property from "../components/Property";
-
-import noResultsImage from "../assets/images/noresult.svg";
 import { baseURL, fetchApi } from "../utils/fetchApi";
+import noResultsImage from "../assets/images/noresult.svg";
 
+// Search
 const Search = ({ properties }) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
 
   return (
     <Box>
+      {/* Property Filters */}
       <Flex
         cursor="pointer"
         bg="gray.100"
@@ -35,11 +36,14 @@ const Search = ({ properties }) => {
       <Text fontSize="2xl" p="4" fontWeight="bold">
         Properties {router.query.purpose}
       </Text>
+      {/* Properties */}
       <Flex flexWrap="wrap">
         {properties.map((property) => (
           <Property property={property} key={property.id} />
         ))}
       </Flex>
+
+      {/* No Properties Found */}
       {properties.length === 0 && (
         <Flex
           justifyContent="center"
@@ -58,6 +62,7 @@ const Search = ({ properties }) => {
   );
 };
 
+// fetch filtered properties
 export async function getServerSideProps({ query }) {
   const purpose = query.purpose || "for-rent";
   const rentFrequency = query.rentFrequency || "yearly";

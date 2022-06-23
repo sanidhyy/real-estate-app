@@ -1,24 +1,29 @@
 import Router from "next/router";
 import Head from "next/head";
 import NProgress from "nprogress";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import Layout from "../components/Layout";
 import "../styles/globals.css";
-import { ChakraProvider } from "@chakra-ui/react";
 
+// App
 function MyApp({ Component, pageProps }) {
+  // configure nprogress
   NProgress.configure({ showSpinner: false });
 
+  // start progress on route start
   Router.events.on("routeChangeStart", () => {
     NProgress.start();
   });
 
+  // stop progress on route complete
   Router.events.on("routeChangeComplete", () => {
     NProgress.done();
   });
 
   return (
     <>
+      {/* Head */}
       <Head>
         <link
           rel="stylesheet"
@@ -28,6 +33,8 @@ function MyApp({ Component, pageProps }) {
           referrerPolicy="no-referrer"
         />
       </Head>
+
+      {/* Layout */}
       <ChakraProvider>
         <Layout>
           <Component {...pageProps} />

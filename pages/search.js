@@ -14,6 +14,8 @@ const Search = ({ properties }) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
 
+  console.log(properties);
+
   return (
     <Box>
       <Flex

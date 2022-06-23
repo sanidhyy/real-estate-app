@@ -21,7 +21,7 @@
 NEXT_APP_RAPID_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-5. Now, to setup Crypto API, go to [Rapid API Website](https://rapidapi.com/) and create an account.
+5. Now, to setup API, go to [Rapid API Website](https://rapidapi.com/) and create an account.
 
 6. Enable this API to fetch Real estate data: [API: Bayut](https://rapidapi.com/apidojo/api/bayut/).
 

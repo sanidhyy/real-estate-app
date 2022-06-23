@@ -4,6 +4,7 @@ import { Box, Icon, Flex } from "@chakra-ui/react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
+// Carousel Left Arrow
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
 
@@ -20,6 +21,7 @@ const LeftArrow = () => {
   );
 };
 
+// Carousel Right Arrow
 const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
 
@@ -35,6 +37,8 @@ const RightArrow = () => {
     </Flex>
   );
 };
+
+// Image Scrollbar
 const ImageScrollbar = ({ data }) => {
   return (
     <ScrollMenu

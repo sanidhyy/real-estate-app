@@ -4,7 +4,7 @@ import { Box, Icon, Flex } from "@chakra-ui/react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
-// Carousel Left Arrow
+// Left Arrow
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
 
@@ -21,7 +21,7 @@ const LeftArrow = () => {
   );
 };
 
-// Carousel Right Arrow
+// Right Arrow
 const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
 
@@ -39,7 +39,7 @@ const RightArrow = () => {
 };
 
 // Image Scrollbar
-const ImageScrollbar = ({ data }) => {
+export default function ImageSrollbar({ data }) {
   return (
     <ScrollMenu
       LeftArrow={LeftArrow}
@@ -47,13 +47,7 @@ const ImageScrollbar = ({ data }) => {
       style={{ overflow: "hidden" }}
     >
       {data.map((item) => (
-        <Box
-          key={item.id}
-          width="910px"
-          itemID={item.id}
-          overflow="hidden"
-          p="1"
-        >
+        <Box width="910px" itemId={item.id} overflow="hidden" p="1">
           <Image
             placeholder="blur"
             blurDataURL={item.url}
@@ -66,6 +60,4 @@ const ImageScrollbar = ({ data }) => {
       ))}
     </ScrollMenu>
   );
-};
-
-export default ImageScrollbar;
+}

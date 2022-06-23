@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 
+// Footer
 const Footer = () => (
   <Box
     textAlign="center"
@@ -8,7 +9,7 @@ const Footer = () => (
     borderTop="1px"
     borderColor="gray.100"
   >
-    2021 Realtor, Inc.
+    {new Date().getFullYear()} Realtor, Inc.
   </Box>
 );
 

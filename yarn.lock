@@ -68,7 +68,7 @@
   dependencies:
     "@babel/types" "^7.26.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.18.3":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3":
   version "7.26.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.26.0.tgz#8600c2f595f277c60815256418b85356a65173c1"
   integrity sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==
@@ -669,7 +669,7 @@
   dependencies:
     tslib "^2.4.0"
 
-"@emotion/babel-plugin@^11.13.5", "@emotion/babel-plugin@^11.7.1":
+"@emotion/babel-plugin@^11.13.5":
   version "11.13.5"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.13.5.tgz#eab8d65dbded74e0ecfd28dc218e75607c4e7bc0"
   integrity sha512-pxHCpT2ex+0q+HH91/zsdHkw/lXd468DIN2zvfvLtPKLLMo6gQj7oLObq8PhkrxOZb/gGCq03S3Z7PDhS8pduQ==
@@ -686,16 +686,16 @@
     source-map "^0.5.7"
     stylis "4.2.0"
 
-"@emotion/cache@^11.9.3":
-  version "11.9.3"
-  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.9.3.tgz#96638449f6929fd18062cfe04d79b29b44c0d6cb"
-  integrity sha512-0dgkI/JKlCXa+lEXviaMtGBL0ynpx4osh7rjOXE71q9bIF8G+XhJgvi+wDu0B0IdCVx37BffiwXlN9I3UuzFvg==
+"@emotion/cache@^11.14.0":
+  version "11.14.0"
+  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.14.0.tgz#ee44b26986eeb93c8be82bb92f1f7a9b21b2ed76"
+  integrity sha512-L/B1lc/TViYk4DcpGxtAVbx0ZyiKM5ktoIyafGkH6zg/tj+mA+NE//aPYKG0k8kCHSHVJrpLpcAlOBEXQ3SavA==
   dependencies:
-    "@emotion/memoize" "^0.7.4"
-    "@emotion/sheet" "^1.1.1"
-    "@emotion/utils" "^1.0.0"
-    "@emotion/weak-memoize" "^0.2.5"
-    stylis "4.0.13"
+    "@emotion/memoize" "^0.9.0"
+    "@emotion/sheet" "^1.4.0"
+    "@emotion/utils" "^1.4.2"
+    "@emotion/weak-memoize" "^0.4.0"
+    stylis "4.2.0"
 
 "@emotion/hash@^0.9.2":
   version "0.9.2"
@@ -721,30 +721,26 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz#19bf0f5af19149111c40d98bb0cf82119f5d9eeb"
   integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
 
-"@emotion/memoize@^0.7.4":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
-  integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
-
 "@emotion/memoize@^0.9.0":
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.9.0.tgz#745969d649977776b43fc7648c556aaa462b4102"
   integrity sha512-30FAj7/EoJ5mwVPOWhAyCX+FPfMDrVecJAM+Iw9NRoSl4BBAQeqj4cApHHUXOVvIPgLVDsCFoz/hGD+5QQD1GQ==
 
-"@emotion/react@^11.9.3":
-  version "11.9.3"
-  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.9.3.tgz#f4f4f34444f6654a2e550f5dab4f2d360c101df9"
-  integrity sha512-g9Q1GcTOlzOEjqwuLF/Zd9LC+4FljjPjDfxSM7KmEakm+hsHXk+bYZ2q+/hTJzr0OUNkujo72pXLQvXj6H+GJQ==
+"@emotion/react@^11.14.0":
+  version "11.14.0"
+  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.14.0.tgz#cfaae35ebc67dd9ef4ea2e9acc6cd29e157dd05d"
+  integrity sha512-O000MLDBDdk/EohJPFUqvnp4qnHeYkVP5B0xEG0D/L7cOKP9kefu2DXn8dj74cQfsEzUqh+sr1RzFqiL1o+PpA==
   dependencies:
-    "@babel/runtime" "^7.13.10"
-    "@emotion/babel-plugin" "^11.7.1"
-    "@emotion/cache" "^11.9.3"
-    "@emotion/serialize" "^1.0.4"
-    "@emotion/utils" "^1.1.0"
-    "@emotion/weak-memoize" "^0.2.5"
+    "@babel/runtime" "^7.18.3"
+    "@emotion/babel-plugin" "^11.13.5"
+    "@emotion/cache" "^11.14.0"
+    "@emotion/serialize" "^1.3.3"
+    "@emotion/use-insertion-effect-with-fallbacks" "^1.2.0"
+    "@emotion/utils" "^1.4.2"
+    "@emotion/weak-memoize" "^0.4.0"
     hoist-non-react-statics "^3.3.1"
 
-"@emotion/serialize@^1.0.4", "@emotion/serialize@^1.3.3":
+"@emotion/serialize@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-1.3.3.tgz#d291531005f17d704d0463a032fe679f376509e8"
   integrity sha512-EISGqt7sSNWHGI76hC7x1CksiXPahbxEOrC5RjmFRJTqLyEK9/9hZvBbiYn70dw4wuwMKiEMCUlR6ZXTSWQqxA==
@@ -755,10 +751,10 @@
     "@emotion/utils" "^1.4.2"
     csstype "^3.0.2"
 
-"@emotion/sheet@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@emotion/sheet/-/sheet-1.1.1.tgz#015756e2a9a3c7c5f11d8ec22966a8dbfbfac787"
-  integrity sha512-J3YPccVRMiTZxYAY0IOq3kd+hUP8idY8Kz6B/Cyo+JuXq52Ek+zbPbSQUrVQp95aJ+lsAW7DPL1P2Z+U1jGkKA==
+"@emotion/sheet@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@emotion/sheet/-/sheet-1.4.0.tgz#c9299c34d248bc26e82563735f78953d2efca83c"
+  integrity sha512-fTBW9/8r2w3dXWYM4HCB1Rdp8NLibOw2+XELH5m5+AkWiL/KqYX6dc0kKYlaYyKjrQ6ds33MCdMPEwgs2z1rqg==
 
 "@emotion/styled@^11.13.5":
   version "11.13.5"
@@ -777,20 +773,20 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.10.0.tgz#2af2f7c7e5150f497bdabd848ce7b218a27cf745"
   integrity sha512-dFoMUuQA20zvtVTuxZww6OHoJYgrzfKM1t52mVySDJnMSEa08ruEvdYQbhvyu6soU+NeLVd3yKfTfT0NeV6qGg==
 
-"@emotion/use-insertion-effect-with-fallbacks@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@emotion/use-insertion-effect-with-fallbacks/-/use-insertion-effect-with-fallbacks-1.1.0.tgz#1a818a0b2c481efba0cf34e5ab1e0cb2dcb9dfaf"
-  integrity sha512-+wBOcIV5snwGgI2ya3u99D7/FJquOIniQT1IKyDsBmEgwvpxMNeS65Oib7OnE2d2aY+3BU4OiH+0Wchf8yk3Hw==
+"@emotion/use-insertion-effect-with-fallbacks@^1.1.0", "@emotion/use-insertion-effect-with-fallbacks@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@emotion/use-insertion-effect-with-fallbacks/-/use-insertion-effect-with-fallbacks-1.2.0.tgz#8a8cb77b590e09affb960f4ff1e9a89e532738bf"
+  integrity sha512-yJMtVdH59sxi/aVJBpk9FQq+OR8ll5GT8oWd57UpeaKEVGab41JWaCFA7FRLoMLloOZF/c/wsPoe+bfGmRKgDg==
 
-"@emotion/utils@^1.0.0", "@emotion/utils@^1.1.0", "@emotion/utils@^1.4.2":
+"@emotion/utils@^1.4.2":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-1.4.2.tgz#6df6c45881fcb1c412d6688a311a98b7f59c1b52"
   integrity sha512-3vLclRofFziIa3J2wDh9jjbkUz9qk5Vi3IZ/FSTKViB0k+ef0fPV7dYrUIugbgupYDx7v9ud/SjrtEP8Y4xLoA==
 
-"@emotion/weak-memoize@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
-  integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
+"@emotion/weak-memoize@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.4.0.tgz#5e13fac887f08c44f76b0ccaf3370eb00fec9bb6"
+  integrity sha512-snKqtPW01tN0ui7yu9rGv69aJXr/a/Ywvl11sUjNtEcRc+ng/mQriFL0wLXMef74iHa/EkftbDzU9F8iFbH+zg==
 
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.5.1"
@@ -3652,11 +3648,6 @@ styled-jsx@5.1.6:
   integrity sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA==
   dependencies:
     client-only "0.0.1"
-
-stylis@4.0.13:
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.0.13.tgz#f5db332e376d13cc84ecfe5dace9a2a51d954c91"
-  integrity sha512-xGPXiFVl4YED9Jh7Euv2V220mriG9u4B2TA6Ybjc1catrstKD2PpIdU3U0RKpkVBC2EhmL/F0sPCr9vrFTNRag==
 
 stylis@4.2.0:
   version "4.2.0"

@@ -2,13 +2,13 @@
 
 ![A Next JS Real Estate App](https://user-images.githubusercontent.com/71302066/175340586-9dccc0e4-0444-47cf-bd6e-d3543e14aae8.png)
 
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/Technical-Shubham-tech)
-[![GitHub license](https://img.shields.io/github/license/Technical-Shubham-tech/real-estate-app)](https://github.com/Technical-Shubham-tech/real-estate-app/blob/main/LICENSE.md)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Technical-Shubham-tech/real-estate-app/commits/main)
-[![GitHub branches](https://badgen.net/github/branches/Technical-Shubham-tech/real-estate-app/)](https://github.com/Technical-Shubham-tech/real-estate-app/branches)
-[![Github commits](https://badgen.net/github/commits/Technical-Shubham-tech/real-estate-app/main)](https://github.com/Technical-Shubham-tech/real-estate-app/commits)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sanidhyy)
+[![GitHub license](https://img.shields.io/github/license/sanidhyy/real-estate-app)](https://github.com/sanidhyy/real-estate-app/blob/main/LICENSE.md)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sanidhyy/real-estate-app/commits/main)
+[![GitHub branches](https://badgen.net/github/branches/sanidhyy/real-estate-app/)](https://github.com/sanidhyy/real-estate-app/branches)
+[![Github commits](https://badgen.net/github/commits/sanidhyy/real-estate-app/main)](https://github.com/sanidhyy/real-estate-app/commits)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://real-estate-app-react.vercel.app/)
-[![GitHub issues](https://img.shields.io/github/issues/Technical-Shubham-tech/real-estate-app)](https://github.com/Technical-Shubham-tech/real-estate-app/issues)
+[![GitHub issues](https://img.shields.io/github/issues/sanidhyy/real-estate-app)](https://github.com/sanidhyy/real-estate-app/issues)
 
 ## ⚠️ Before you start
 
@@ -49,7 +49,7 @@ NEXT_APP_RAPID_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 [<img src="https://user-images.githubusercontent.com/71302066/174567516-824b1967-5954-4ac7-9446-14a3b2ab825d.svg" alt="Rapid API">](https://rapidapi.com/)
 
-[<img src="http://ForTheBadge.com/images/badges/built-with-love.svg" alt="Built with Love">](https://github.com/Technical-Shubham-tech)
+[<img src="http://ForTheBadge.com/images/badges/built-with-love.svg" alt="Built with Love">](https://github.com/sanidhyy)
 
 ## 🔧 Stats
 
@@ -65,8 +65,8 @@ You might encounter some bugs while using this app. You are more than welcome to
 
 ## 🚀 Follow Me
 
-[![GitHub followers](https://img.shields.io/github/followers/Technical-Shubham-tech?style=social&label=Follow&maxAge=2592000)](https://github.com/Technical-Shubham-tech)
-[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FTechnicalShubam)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FTechnical-Shubham-tech%2Fmedical-chat-app)
+[![GitHub followers](https://img.shields.io/github/followers/sanidhyy?style=social&label=Follow&maxAge=2592000)](https://github.com/sanidhyy)
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fsanidhyyy)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanidhyy%2Fmedical-chat-app)
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCNAz_hUVBG2ZUN8TVm0bmYw)
 
 ## ⭐ Give A Star

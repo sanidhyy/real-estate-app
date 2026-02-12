@@ -6,7 +6,7 @@ import { BsFilter } from "react-icons/bs";
 
 import SearchFilters from "../components/SearchFilters";
 import Property from "../components/Property";
-import { baseURL, fetchApi } from "../utils/fetchApi";
+import { baseURL, fetchApiPost } from "../utils/fetchApi";
 import noResultsImage from "../assets/images/noresult.svg";
 
 // Search
@@ -65,25 +65,45 @@ const Search = ({ properties }) => {
 // fetch filtered properties
 export async function getServerSideProps({ query }) {
   const purpose = query.purpose || "for-rent";
-  const rentFrequency = query.rentFrequency || "yearly";
-  const minPrice = query.minPrice || "0";
-  const maxPrice = query.maxPrice || "1000000";
-  const roomsMin = query.roomsMin || "0";
-  const bathsMin = query.bathsMin || "0";
-  const sort = query.sort || "price-desc";
-  const areaMax = query.areaMax || "35000";
-  const locationExternalIDs = query.locationExternalIDs || "5002";
-  const categoryExternalID = query.categoryExternalID || "4";
+  const locationIds = query.location_ids ? query.location_ids.split(",").map(Number) : [2];
+  const minPrice = query.minPrice ? Number(query.minPrice) : undefined;
+  const maxPrice = query.maxPrice ? Number(query.maxPrice) : undefined;
+  const roomsMin = query.roomsMin;
+  const bathsMin = query.bathsMin;
+  const category = query.category || undefined;
+  const page = Number(query.page) || 0;
 
-  const data = await fetchApi(
-    `${baseURL}/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`
-  );
-
-  return {
-    props: {
-      properties: data?.hits,
-    },
+  const body = {
+    purpose,
+    locations_ids: locationIds,
+    index: "latest",
+    rooms: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    baths: [0, 1, 2, 3, 4, 5, 6],
   };
+  if (minPrice != null) body.price_min = minPrice;
+  if (maxPrice != null) body.price_max = maxPrice;
+  if (category) body.categories = [category];
+  if (roomsMin != null) body.rooms = Array.from({ length: 9 - Number(roomsMin) }, (_, i) => i + Number(roomsMin));
+  if (bathsMin != null) body.baths = Array.from({ length: 7 - Number(bathsMin) }, (_, i) => i + Number(bathsMin));
+
+  try {
+    const data = await fetchApiPost(
+      `${baseURL}/properties_search?page=${page}`,
+      body
+    );
+    return {
+      props: {
+        properties: data?.results || [],
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching properties:", error);
+    return {
+      props: {
+        properties: [],
+      },
+    };
+  }
 }
 
 export default Search;

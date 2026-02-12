@@ -7,148 +7,142 @@ import millify from "millify";
 import { baseURL, fetchApi } from "../../utils/fetchApi";
 import ImageScrollBar from "../../components/ImageScrollBar";
 
-// Propery Details
+// Property Details - Bayut API response shape
 const PropertyDetails = ({
   propertyDetails: {
     price,
-    rentFrequency,
-    rooms,
     title,
-    baths,
-    area,
-    agency,
-    isVerified,
     description,
     type,
     purpose,
-    furnishingStatus,
+    area,
+    details,
+    location,
+    agency,
+    media,
+    verification,
     amenities,
-    photos,
   },
-}) => (
-  // Property Images
-  <Box maxWidth="1000px" m="auto" p="4">
-    {photos && <ImageScrollBar data={photos} />}
-    <Box w="full" p="6">
-      <Flex paddingTop="2" alignItems="center" justifyContent="space-between">
-        <Flex alignItems="center">
-          {/* Verified badge */}
-          <Box paddingRight="3" color="green.400">
-            {isVerified && <GoVerified />}
-          </Box>
-          {/* Price */}
-          <Text fontWeight="bold" fontSize="lg">
-            AED {millify(price)}
-            {rentFrequency && `/${rentFrequency}`}
-          </Text>
-        </Flex>
-        <Box>
-          {/* Agency Logo */}
-          <Avatar size="sm" src={agency?.logo?.url} />
-        </Box>
-      </Flex>
-      {/* More Info */}
-      <Flex
-        alignItems="center"
-        p="1"
-        justifyContent="space-between"
-        w="250px"
-        color="blue.400"
-      >
-        {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft{" "}
-        <BsGridFill />
-      </Flex>
-      <Box marginTop="2">
-        {/* Title */}
-        <Text fontSize="lg" marginBottom="2" fontWeight="bold">
-          {title}
-        </Text>
-        {/* Description */}
-        <Text lineHeight="2" color="gray.600">
-          {description}
-        </Text>
-      </Box>
-      <Flex
-        flexWrap="wrap"
-        textTransform="uppercase"
-        justifyContent="space-between"
-      >
-        {/* Type */}
-        <Flex
-          justifyContent="space-between"
-          w="400px"
-          borderBottom="1px"
-          borderColor="gray.100"
-          p="3"
-        >
-          <Text>Type</Text>
-          <Text fontWeight="bold">{type}</Text>
-        </Flex>
-        {/* Purpose */}
-        <Flex
-          justifyContent="space-between"
-          w="400px"
-          borderBottom="1px"
-          borderColor="gray.100"
-          p="3"
-        >
-          <Text>Purpose</Text>
-          <Text fontWeight="bold">{purpose}</Text>
-        </Flex>
-        {/* Furnishing Status */}
-        {furnishingStatus && (
-          <Flex
-            justifyContent="space-between"
-            w="400px"
-            borderBottom="1px"
-            borderColor="gray.100"
-            p="3"
-          >
-            <Text>Furnishing Status</Text>
-            <Text fontWeight="bold">{furnishingStatus}</Text>
-          </Flex>
-        )}
-      </Flex>
-      {/* Amenities */}
-      <Box>
-        {amenities.length && (
-          <Text fontSize="2xl" fontWeight="black" marginTop="5">
-            Amenities
-          </Text>
-        )}
+}) => {
+  const rooms = details?.bedrooms ?? 0;
+  const baths = details?.bathrooms ?? 0;
+  const areaSqft = area?.built_up ?? 0;
+  const propertyType = type?.sub || type?.main || "";
+  const furnishingStatus = details?.is_furnished != null ? (details.is_furnished ? "Furnished" : "Unfurnished") : null;
+  const isVerified = verification?.is_verified;
+  const propertyImages = media?.photos
+    ? (Array.isArray(media.photos[0]) ? media.photos.flat() : media.photos).map((url, i) => ({ id: i, url }))
+    : media?.cover_photo
+    ? [{ id: 0, url: media.cover_photo }]
+    : [];
 
-        <Flex flexWrap="wrap">
-          {amenities?.map((item) =>
-            item?.amenities?.map((amenity) => (
-              <Text
-                key={amenity.text}
-                fontWeight="bold"
-                color="blue.400"
-                fontSize="l"
-                p="2"
-                bg="gray.200"
-                m="1"
-                borderRadius="5"
-              >
-                {amenity.text}
-              </Text>
-            ))
+  return (
+    <Box maxWidth="1000px" m="auto" p="4">
+      {propertyImages.length > 0 && <ImageScrollBar data={propertyImages} />}
+      <Box w="full" p="6">
+        <Flex paddingTop="2" alignItems="center" justifyContent="space-between">
+          <Flex alignItems="center">
+            {isVerified && (
+              <Box paddingRight="3" color="green.400">
+                <GoVerified />
+              </Box>
+            )}
+            <Text fontWeight="bold" fontSize="lg">
+              AED {millify(price)}
+            </Text>
+          </Flex>
+          {agency?.logo_url && (
+            <Avatar size="sm" src={agency.logo_url} />
           )}
         </Flex>
+        <Flex
+          alignItems="center"
+          p="1"
+          justifyContent="space-between"
+          w="250px"
+          color="blue.400"
+        >
+          {rooms} <FaBed /> | {baths} <FaBath /> | {areaSqft > 0 ? `${millify(areaSqft)} sqft` : "N/A"}{" "}
+          <BsGridFill />
+        </Flex>
+        <Box marginTop="2">
+          <Text fontSize="lg" marginBottom="2" fontWeight="bold">
+            {title}
+          </Text>
+          {description && (
+            <Text lineHeight="2" color="gray.600">
+              {description}
+            </Text>
+          )}
+        </Box>
+        <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
+          {propertyType && (
+            <Flex justifyContent="space-between" w="400px" borderBottom="1px" borderColor="gray.100" p="3">
+              <Text>Type</Text>
+              <Text fontWeight="bold">{propertyType}</Text>
+            </Flex>
+          )}
+          {purpose && (
+            <Flex justifyContent="space-between" w="400px" borderBottom="1px" borderColor="gray.100" p="3">
+              <Text>Purpose</Text>
+              <Text fontWeight="bold">{purpose}</Text>
+            </Flex>
+          )}
+          {furnishingStatus && (
+            <Flex justifyContent="space-between" w="400px" borderBottom="1px" borderColor="gray.100" p="3">
+              <Text>Furnishing</Text>
+              <Text fontWeight="bold">{furnishingStatus}</Text>
+            </Flex>
+          )}
+        </Flex>
+        {amenities?.length > 0 && (
+          <Box marginTop="5">
+            <Text fontSize="2xl" fontWeight="black" marginTop="5">
+              Amenities
+            </Text>
+            <Flex flexWrap="wrap">
+              {amenities.map((group, i) =>
+                (group.items || []).map((item) => (
+                  <Text
+                    key={`${i}-${item}`}
+                    fontWeight="bold"
+                    color="blue.400"
+                    fontSize="l"
+                    p="2"
+                    bg="gray.200"
+                    m="1"
+                    borderRadius="5"
+                  >
+                    {item}
+                  </Text>
+                ))
+              )}
+            </Flex>
+          </Box>
+        )}
       </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 export default PropertyDetails;
 
 // fetch a property
 export async function getServerSideProps({ params: { id } }) {
-  const data = await fetchApi(`${baseURL}/properties/detail?externalID=${id}`);
+  try {
+    const data = await fetchApi(`${baseURL}/property/${id}`);
 
-  return {
-    props: {
-      propertyDetails: data,
-    },
-  };
+    return {
+      props: {
+        propertyDetails: data || {},
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching property details:", error);
+    return {
+      props: {
+        propertyDetails: {},
+      },
+    };
+  }
 }

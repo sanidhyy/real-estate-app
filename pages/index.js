@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Flex, Box, Text, Button } from "@chakra-ui/react";
 
-import { baseURL, fetchApi } from "../utils/fetchApi";
+import { baseURL, fetchApiPost } from "../utils/fetchApi";
 import Property from "../components/Property";
 
 // Banner
@@ -57,7 +57,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         desc2="and more"
         buttonText="Explore Renting"
         linkName="/search?purpose=for-rent"
-        imageURL="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
+        imageURL="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80"
       />
 
       {/* Properties for rent */}
@@ -76,7 +76,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         desc2="and more"
         buttonText="Explore Buying"
         linkName="/search?purpose=for-sale"
-        imageURL="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
+        imageURL="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80"
       />
       {/* Properties for sale */}
       <Flex flexWrap="wrap">
@@ -88,19 +88,46 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
   );
 }
 
+// Default Dubai location ID (city level)
+const DEFAULT_LOCATION_IDS = [2];
+
 // fetch all properties
 export async function getStaticProps() {
-  const propertyForSale = await fetchApi(
-    `${baseURL}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
-  );
-  const propertyForRent = await fetchApi(
-    `${baseURL}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
-  );
+  try {
+    const propertyForSale = await fetchApiPost(
+      `${baseURL}/properties_search?page=0`,
+      {
+        purpose: "for-sale",
+        locations_ids: DEFAULT_LOCATION_IDS,
+        index: "popular",
+        rooms: [0, 1, 2, 3, 4, 5],
+        baths: [0, 1, 2, 3, 4],
+      }
+    );
+    const propertyForRent = await fetchApiPost(
+      `${baseURL}/properties_search?page=0`,
+      {
+        purpose: "for-rent",
+        locations_ids: DEFAULT_LOCATION_IDS,
+        index: "popular",
+        rooms: [0, 1, 2, 3, 4, 5],
+        baths: [0, 1, 2, 3, 4],
+      }
+    );
 
-  return {
-    props: {
-      propertiesForSale: propertyForSale?.hits,
-      propertiesForRent: propertyForRent?.hits,
-    },
-  };
+    return {
+      props: {
+        propertiesForSale: propertyForSale?.results || [],
+        propertiesForRent: propertyForRent?.results || [],
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching properties:", error);
+    return {
+      props: {
+        propertiesForSale: [],
+        propertiesForRent: [],
+      },
+    };
+  }
 }

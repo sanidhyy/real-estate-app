@@ -16,7 +16,7 @@
     "dotenv": "^17.4.2",
     "framer-motion": "^12.38.0",
     "millify": "^6.1.0",
-    "next": "16.2.6",
+    "next": "16.2.9",
     "nprogress": "^0.2.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",

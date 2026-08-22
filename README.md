@@ -7,7 +7,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sanidhyy/real-estate-app/commits/main)
 [![GitHub branches](https://badgen.net/github/branches/sanidhyy/real-estate-app/)](https://github.com/sanidhyy/real-estate-app/branches)
 [![Github commits](https://badgen.net/github/commits/sanidhyy/real-estate-app/main)](https://github.com/sanidhyy/real-estate-app/commits)
-[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://real-estate-app-react.vercel.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1fa9f276-c302-4114-b132-579645fff608/deploy-status)](https://app-realestate.netlify.app "Netlify Status")
 [![GitHub issues](https://img.shields.io/github/issues/sanidhyy/real-estate-app)](https://github.com/sanidhyy/real-estate-app/issues)
 
 ## ⚠️ Before you start

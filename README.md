@@ -23,7 +23,7 @@ NEXT_APP_RAPID_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 5. Now, to setup API, go to [Rapid API Website](https://rapidapi.com/) and create an account.
 
-6. Enable this API to fetch Real estate data: [Bayut API (UAE Real Estate)](https://rapidapi.com/hub/bayutapi.com) — base URL: `https://uae-real-estate2.p.rapidapi.com` (see [bayutapi.com](https://bayutapi.com)).
+6. Enable this API to fetch Real estate data: [Bayut API (UAE Real Estate)](https://rapidapi.com/taviansol/api/uae-real-estate2) — base URL: `https://uae-real-estate2.p.rapidapi.com` (see [bayutapi.com](https://bayutapi.com)).
 
 ![Copy API Key](https://user-images.githubusercontent.com/71302066/175342480-ab86e3e0-9380-47b0-b79a-9f13e079077d.png)
 

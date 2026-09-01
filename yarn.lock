@@ -4014,11 +4014,12 @@ react-focus-lock@^2.9.1:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
-react-horizontal-scrolling-menu@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-8.3.0.tgz#ebf18196b749fe11794e5c46899649f55c1a9e7c"
-  integrity sha512-tBSn3VUdao9EAUhBLoG/JCwfXXUTEPfaiJ4Dx6LI4VdV7NFP6voX8teWeyH7aDjaiSMfFPjGMGDECjnm4wM7Jg==
+react-horizontal-scrolling-menu@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-8.3.1.tgz#6c4da477db807f13be7f2b5e01434f791047222a"
+  integrity sha512-OvFTxUykBucWuR77BFK78UyoRh2K3qhBo2/SqSmXg0NF+gY5bzDdFcqLtp2lsMY+uvDPTgchj51Ii9PvEqGD6w==
   dependencies:
+    scroll-into-view-if-needed "^3.1.0"
     smooth-scroll-into-view-if-needed "^2.0.2"
 
 react-icons@^5.7.0:

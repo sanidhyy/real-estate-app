@@ -13,21 +13,20 @@
 ## ⚠️ Before you start
 
 1. Make sure **Git** and **NodeJS** is installed
-2. **Yarn** is faster than Npm. So use [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/).
-3. Create .env file in root folder.
-4. Contents of **.env**
+2. Create .env file in root folder.
+3. Contents of **.env**
 
 ```
 NEXT_APP_RAPID_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-5. Now, to setup API, go to [Rapid API Website](https://rapidapi.com/) and create an account.
+4. Now, to setup API, go to [Rapid API Website](https://rapidapi.com/) and create an account.
 
-6. Enable this API to fetch Real estate data: [Bayut API (UAE Real Estate)](https://rapidapi.com/taviansol/api/uae-real-estate2) — base URL: `https://uae-real-estate2.p.rapidapi.com` (see [bayutapi.com](https://bayutapi.com)).
+5. Enable this API to fetch Real estate data: [Bayut API (UAE Real Estate)](https://rapidapi.com/taviansol/api/uae-real-estate2) — base URL: `https://uae-real-estate2.p.rapidapi.com` (see [bayutapi.com](https://bayutapi.com)).
 
 ![Copy API Key](https://user-images.githubusercontent.com/71302066/175342480-ab86e3e0-9380-47b0-b79a-9f13e079077d.png)
 
-7. After enabling you can get your API Keys and paste them in `.env` file in `NEXT_APP_RAPID_API_KEY`.
+6. After enabling you can get your API Keys and paste them in `.env` file in `NEXT_APP_RAPID_API_KEY`.
 
 **NOTE:** Make sure you don't share these keys publicaly.
 
@@ -35,8 +34,8 @@ NEXT_APP_RAPID_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 1. Clone this **repository** to your local computer.
 2. Open **terminal** in root directory.
-3. Type and Run `npm install` or `yarn install`.
-4. Once packages are installed, you can start this app using `npm run dev` or `yarn dev`
+3. Type and Run `npm install` or `pnpm install`.
+4. Once packages are installed, you can start this app using `npm run dev` or `pnpm dev`
 5. Now app is fully configured and you can start using this app :+1:
 
 ### Need Help?

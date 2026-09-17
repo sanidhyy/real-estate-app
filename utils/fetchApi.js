@@ -4,7 +4,7 @@ import axios from "axios";
 export const baseURL = "https://uae-real-estate2.p.rapidapi.com";
 
 const rapidApiHeaders = {
-  "X-RapidAPI-Key": process.env.NEXT_APP_RAPID_API_KEY,
+  "X-RapidAPI-Key": process.env.RAPID_API_KEY,
   "X-RapidAPI-Host": "uae-real-estate2.p.rapidapi.com",
   "Content-Type": "application/json",
 };

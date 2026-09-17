@@ -17,7 +17,7 @@
 3. Contents of **.env**
 
 ```
-NEXT_APP_RAPID_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXX
+RAPID_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 4. Now, to setup API, go to [Rapid API Website](https://rapidapi.com/) and create an account.
@@ -26,7 +26,7 @@ NEXT_APP_RAPID_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ![Copy API Key](https://user-images.githubusercontent.com/71302066/175342480-ab86e3e0-9380-47b0-b79a-9f13e079077d.png)
 
-6. After enabling you can get your API Keys and paste them in `.env` file in `NEXT_APP_RAPID_API_KEY`.
+6. After enabling you can get your API Keys and paste them in `.env` file in `RAPID_API_KEY`.
 
 **NOTE:** Make sure you don't share these keys publicaly.
 

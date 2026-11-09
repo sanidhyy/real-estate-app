@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.14.1",
     "axios": "^1.21.0",
     "dotenv": "^18.0.9",
-    "framer-motion": "^14.9.0",
+    "framer-motion": "^14.10.0",
     "millify": "^6.1.0",
     "next": "16.4.3",
     "nprogress": "^0.2.0",
